@@ -1,3 +1,5 @@
+// array with all the Wordle words
+
 var wordList = [
   "cigar",
   "rebut",
@@ -2318,8 +2320,8 @@ var wordList = [
 
 const startDate = new Date(2021, 5, 19, 0, 0, 0, 0);
 const todayDate = new Date().setHours(0, 0, 0, 0);
-console.log(startDate);
 
+// get number by comparing date with start date
 function getNumber(startDate, date = todayDate) {
   const differenceDate = startDate - date;
   const drawNumber = Math.abs(Math.round(differenceDate / 864e5));
@@ -2328,11 +2330,13 @@ function getNumber(startDate, date = todayDate) {
 
 const drawNumber = getNumber(startDate);
 
+// get word with list and draw number
 function getWord(list, drawNumber) {
   let todaysWord = list[drawNumber];
   return todaysWord;
 }
 
+// Buttons listeners with function to show answers and add classes
 const yesterdayButton = document.getElementById("yesterdays-btn");
 
 yesterdayButton.addEventListener("click", () => {

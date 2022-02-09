@@ -31,8 +31,8 @@ grid-template-rows: 80% 300px;
   align-items: center;
   text-align: center;
   background-color: rgb(57, 156, 26);
-  height: 400px;
-  width: 400px;
+  height: 25vh;
+  width: 25vh;
   font-size: 2.5rem;
   font-weight: 600;
   border-radius: 10px;
@@ -44,8 +44,8 @@ grid-template-rows: 80% 300px;
 }
 
 #todays-btn {
-  height: 600px;
-  width: 600px;
+  height: 40vh;
+  width: 40vh;
   font-size: 3.5rem;
   z-index: 100;
 }
@@ -67,3 +67,10 @@ grid-template-rows: 80% 300px;
   font-size: 6rem;
 }
 
+@media only screen and (max-width: 600px) {
+  .buttons-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+}
