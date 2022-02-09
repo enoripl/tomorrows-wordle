@@ -45,8 +45,8 @@ grid-template-rows: 80% 300px;
 }
 
 #todays-btn {
-  height: min(40vw, 450px);
-  width: min(40vw, 450px);
+  height: min(30vw, 450px);
+  width: min(30vw, 450px);
   font-size: 2.5vw;
   z-index: 100;
 }
@@ -57,9 +57,9 @@ grid-template-rows: 80% 300px;
 }
 
 .answer-text-today {
-    font-size: 6rem !important;
-    font-weight: 800;
-  }
+  font-size: 7rem !important;
+  font-weight: 800;
+}
 
 .logo-section {
   display: flex;
@@ -69,7 +69,7 @@ grid-template-rows: 80% 300px;
   font-size: 5.5vw;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1100px) {
   .buttons-group {
     display: flex;
     flex-direction: column;
@@ -78,13 +78,17 @@ grid-template-rows: 80% 300px;
   .answer-btns {
     width: max(35vw, 200px);
     height: max(35vw, 200px);
-    font-size: 6vw;
+    font-size: 6vw !important;
+    -webkit-box-shadow: -1px 3px 30px -12px rgba(66, 68, 90, 1);
+-moz-box-shadow: -1px 3px 30px -12px rgba(66, 68, 90, 1);
+box-shadow: -1px 3px 30px -12px rgba(66, 68, 90, 1);
+
   }
 
   #todays-btn {
-    font-size: 8vw;
+    height: max(40vw, 200px);
+    width: max(40vw, 200px);
   }
-
   .logo-section {
     font-size: min(10vw, 6rem);
     padding: 40px;
