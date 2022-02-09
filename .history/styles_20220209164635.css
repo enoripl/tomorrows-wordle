@@ -1,0 +1,33 @@
+body {
+    height: 100vh;
+}
+
+main {
+    height: 80vh;
+}
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttons-group {
+    display: flex;
+    align-items: center;
+}
+
+.answer-btns {
+    background-color: green;
+    height: 300px;
+    width: 400px;
+}
+
+#todays-btn {
+    height: 400px;
+    width: 600px;
+}
+
+.logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap");
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  white-space: pre-line;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(247, 246, 217);
+}
+
+.main-content {
+display: grid;
+grid-template-rows: 80% auto;
+}
+
+.buttons-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-group {
+  display: flex;
+  align-items: center;
+}
+
+.answer-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(57, 156, 26);
+  height: 400px;
+  width: 400px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 15px solid rgb(252, 247, 246);
+  -webkit-box-shadow: 1px 8px 24px -14px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 1px 8px 24px -14px rgba(66, 68, 90, 1);
+  box-shadow: 1px 8px 24px -14px rgba(66, 68, 90, 1);
+  z-index: 50;
+}
+
+#todays-btn {
+  height: 600px;
+  width: 600px;
+  font-size: 3.5rem;
+  z-index: 100;
+}
+
+.answer-text {
+  font-size: 5rem;
+  font-weight: 800;
+}
+
+.answer-text-today {
+    font-size: 6rem !important;
+    font-weight: 800;
+  }
+
+.logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+}
+
+footer {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+}

@@ -1,0 +1,9 @@
+.main-content {
+    display: flex;
+    justify-content: center;
+}
+.buttons-group {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
