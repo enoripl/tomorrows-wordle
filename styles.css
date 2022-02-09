@@ -31,9 +31,9 @@ grid-template-rows: 80% 300px;
   align-items: center;
   text-align: center;
   background-color: rgb(57, 156, 26);
-  height: 30vh;
-  width: 30vh;
-  font-size: 2.5rem;
+  height: min(25vw, 400px);
+  width: min(25vw, 400px);
+  font-size: min(2vw, 3rem);
   font-weight: 600;
   border-radius: 10px;
   border: 15px solid rgb(252, 247, 246);
@@ -45,9 +45,9 @@ grid-template-rows: 80% 300px;
 }
 
 #todays-btn {
-  height: 40vh;
-  width: 40vh;
-  font-size: 3.5rem;
+  height: min(40vw, 450px);
+  width: min(40vw, 450px);
+  font-size: 2.5vw;
   z-index: 100;
 }
 
@@ -66,13 +66,27 @@ grid-template-rows: 80% 300px;
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 6rem;
+  font-size: 5.5vw;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1200px) {
   .buttons-group {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+  .answer-btns {
+    width: max(35vw, 200px);
+    height: max(35vw, 200px);
+    font-size: 6vw;
+  }
+
+  #todays-btn {
+    font-size: 8vw;
+  }
+
+  .logo-section {
+    font-size: min(10vw, 6rem);
+    padding: 40px;
+  }
 }
