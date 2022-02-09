@@ -93,4 +93,7 @@ box-shadow: -1px 3px 30px -12px rgba(66, 68, 90, 1);
     font-size: min(10vw, 6rem);
     padding: 40px;
   }
+  .buttons-section {
+    align-items: flex-start;
+}
 }
