@@ -2336,26 +2336,73 @@ function getWord(list, drawNumber) {
   return todaysWord;
 }
 
+const todaysWord = getWord(wordList, drawNumber);
+const yesterdaysWord = getWord(wordList, drawNumber - 1);
+const tomorrowsWord = getWord(wordList, drawNumber + 1);
+
+// Free Dictionary API
+async function getDefinition(whichWord) {
+  let response = await fetch(
+    `https://api.dictionaryapi.dev/api/v2/entries/en/${whichWord}`
+  );
+  let data = await response.json();
+  let definition = data[0].meanings[0].definitions[0].definition;
+  return definition;
+}
+
+getDefinition();
+
 // Buttons listeners with function to show answers and add classes
 const yesterdayButton = document.getElementById("yesterdays-btn");
 
-yesterdayButton.addEventListener("click", () => {
-  yesterdayButton.textContent = getWord(wordList, drawNumber -1)
-  yesterdayButton.classList.add('answer-text', 'animate__animated', 'animate__wobble');
+yesterdayButton.addEventListener("click", async () => {
+  yesterdayButton.textContent = yesterdaysWord;
+  let definitionNode = document.createElement("p");
+  let definitionText = document.createTextNode(
+    await getDefinition(yesterdaysWord)
+  );
+  definitionNode.appendChild(definitionText);
+  yesterdayButton.appendChild(definitionNode);
+  yesterdayButton.classList.add(
+    "answer-text",
+    "animate__animated",
+    "animate__wobble"
+  );
+  definitionNode.classList.add("definition-text");
 });
 
 const todayButton = document.getElementById("todays-btn");
 
-todayButton.addEventListener("click", () => {
-  todayButton.textContent = getWord(wordList, drawNumber);
-  todayButton.classList.add('answer-text-today', 'animate__animated', 'animate__wobble');
+todayButton.addEventListener("click", async () => {
+  todayButton.textContent = todaysWord;
+  let definitionNode = document.createElement("p");
+  let definitionText = document.createTextNode(
+    await getDefinition(todaysWord)
+  );
+  definitionNode.appendChild(definitionText);
+  todayButton.appendChild(definitionNode);
+  todayButton.classList.add(
+    "answer-text-today",
+    "animate__animated",
+    "animate__wobble"
+  );
+  definitionNode.classList.add("definition-text");
 });
 
 const tomorrowButton = document.getElementById("tomorrows-btn");
 
-tomorrowButton.addEventListener("click", () => {
-  tomorrowButton.textContent = getWord(wordList, drawNumber + 1);
-  tomorrowButton.classList.add('answer-text', 'animate__animated', 'animate__wobble');
+tomorrowButton.addEventListener("click", async () => {
+  tomorrowButton.textContent = tomorrowsWord;
+  let definitionNode = document.createElement("p");
+  let definitionText = document.createTextNode(
+    await getDefinition(tomorrowsWord)
+  );
+  definitionNode.appendChild(definitionText);
+  tomorrowButton.appendChild(definitionNode);
+  tomorrowButton.classList.add(
+    "answer-text",
+    "animate__animated",
+    "animate__wobble"
+  );
+  definitionNode.classList.add("definition-text");
 });
-
-
