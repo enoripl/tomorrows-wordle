@@ -4,7 +4,7 @@ body {
   white-space: pre-line;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 95vh;
   background-color: rgb(247, 246, 217);
 }
 
@@ -13,10 +13,18 @@ display: grid;
 grid-template-rows: 80% 300px;
 }
 
+.date {
+position: relative;
+margin-top: 10px;
+color: rgb(252, 247, 246);
+font-size: 1.5vw;
+}
+
 .buttons-section {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
 }
 
 .buttons-group {
@@ -84,7 +92,7 @@ grid-template-rows: 80% 300px;
   .answer-btns {
     width: max(35vw, 200px);
     height: max(35vw, 200px);
-    font-size: max(6vw, 2.5rem) !important;
+    font-size: max(7vw, 2.5rem) !important;
     -webkit-box-shadow: -1px 3px 30px -12px rgba(66, 68, 90, 1);
 -moz-box-shadow: -1px 3px 30px -12px rgba(66, 68, 90, 1);
 box-shadow: -1px 3px 30px -12px rgba(66, 68, 90, 1);
@@ -104,8 +112,14 @@ box-shadow: -1px 3px 30px -12px rgba(66, 68, 90, 1);
 }
 
 .definition-text {
-  font-size: 2.5vw;
+  font-size: 3.5vw;
   font-weight: 300;
   font-style: italic;
 }
+
+.date {
+  margin-top: 5px;
+  font-size: 2.5vw;
+  }
+
 }
