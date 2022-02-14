@@ -2417,12 +2417,15 @@ tomorrowButton.addEventListener("click", async () => {
 
 function displayDate() {
   const date = new Date();
-  const dateText = date.toLocaleDateString("en-US", options);
-  
-  document.getElementById("todays-date").textContent = dateText;
+  document.getElementById("todays-date").textContent = date.toLocaleDateString(
+    "en-US",
+    options
+  );
   date.setDate(date.getDate() - 1);
-  document.getElementById("yesterdays-date").textContent = dateText;
-  date.setDate(date.getDate() + 2);
-  document.getElementById("tommorows-date").textContent = dateText;
+  document.getElementById("yesterdays-date").textContent =
+    date.toLocaleDateString("en-US", options);
+ date.setDate(date.getDate() + 2);
+  document.getElementById("tommorows-date").textContent =
+    date.toLocaleDateString("en-US", options);
 }
 displayDate();
