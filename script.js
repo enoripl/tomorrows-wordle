@@ -2320,7 +2320,12 @@ var wordList = [
 
 const startDate = new Date(2021, 5, 19, 0, 0, 0, 0);
 const todayDate = new Date().setHours(0, 0, 0, 0);
-const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
 
 // get number by comparing date with start date
 function getWordNumber(startDate, date = todayDate) {
@@ -2351,7 +2356,7 @@ async function getDefinition(whichWord) {
     let definition = data[0].meanings[0].definitions[0].definition;
     return definition;
   } catch {
-    return definition = ""
+    return (definition = "");
   }
 }
 
@@ -2412,13 +2417,12 @@ tomorrowButton.addEventListener("click", async () => {
 
 function displayDate() {
   const date = new Date();
-  const todayDateNode = document.getElementById('todays-date');
-  todayDateNode.textContent = date.toLocaleDateString('en-US', options);
-  const yesterdaysDate = date.setDate(date.getDate() - 1)
-  const yesterdaysNode = document.getElementById('yesterdays-date')
-  yesterdaysNode.textContent = date.toLocaleDateString('en-US', options);
-  const tomorrowsDate = date.setDate(date.getDate() + 2)
-  const tommorowsNode = document.getElementById('tommorows-date')
-  tommorowsNode.textContent = date.toLocaleDateString('en-US', options)
+  const dateText = date.toLocaleDateString("en-US", options);
+  
+  document.getElementById("todays-date").textContent = dateText;
+  date.setDate(date.getDate() - 1);
+  document.getElementById("yesterdays-date").textContent = dateText;
+  date.setDate(date.getDate() + 2);
+  document.getElementById("tommorows-date").textContent = dateText;
 }
 displayDate();

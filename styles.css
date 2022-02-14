@@ -41,7 +41,7 @@ font-size: 1.5vw;
   background-color: rgb(57, 156, 26);
   height: min(25vw, 400px);
   width: min(25vw, 400px);
-  font-size: min(2vw, 3rem);
+  font-size: min(2vw, 2rem);
   font-weight: 600;
   border-radius: 10px;
   border: 15px solid rgb(252, 247, 246);
@@ -55,7 +55,7 @@ font-size: 1.5vw;
 #todays-btn {
   height: min(30vw, 450px);
   width: min(30vw, 450px);
-  font-size: 2.5vw;
+  font-size: min(2.5vw, 3.5rem);
   z-index: 100;
 }
 
@@ -78,7 +78,7 @@ font-size: 1.5vw;
 }
 
 .definition-text {
-  font-size: 1.5vw;
+  font-size: min(1.5vw, 2rem);
   font-weight: 300;
   font-style: italic;
 }
