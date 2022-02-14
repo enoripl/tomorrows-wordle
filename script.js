@@ -2342,12 +2342,16 @@ const tomorrowsWord = getWord(wordList, drawNumber + 1);
 
 // Free Dictionary API
 async function getDefinition(whichWord) {
-  let response = await fetch(
-    `https://api.dictionaryapi.dev/api/v2/entries/en/${whichWord}`
-  );
-  let data = await response.json();
-  let definition = data[0].meanings[0].definitions[0].definition;
-  return definition;
+  try {
+    let response = await fetch(
+      `https://api.dictionaryapi.dev/api/v2/entries/en/${whichWord}`
+    );
+    let data = await response.json();
+    let definition = data[0].meanings[0].definitions[0].definition;
+    return definition;
+  } catch {
+    return definition = "";
+  }
 }
 
 getDefinition();
@@ -2356,11 +2360,11 @@ getDefinition();
 const yesterdayButton = document.getElementById("yesterdays-btn");
 
 yesterdayButton.addEventListener("click", async () => {
-  yesterdayButton.textContent = yesterdaysWord;
   let definitionNode = document.createElement("p");
   let definitionText = document.createTextNode(
     await getDefinition(yesterdaysWord)
   );
+  yesterdayButton.textContent = yesterdaysWord;
   definitionNode.appendChild(definitionText);
   yesterdayButton.appendChild(definitionNode);
   yesterdayButton.classList.add(
@@ -2374,11 +2378,9 @@ yesterdayButton.addEventListener("click", async () => {
 const todayButton = document.getElementById("todays-btn");
 
 todayButton.addEventListener("click", async () => {
-  todayButton.textContent = todaysWord;
   let definitionNode = document.createElement("p");
-  let definitionText = document.createTextNode(
-    await getDefinition(todaysWord)
-  );
+  let definitionText = document.createTextNode(await getDefinition(todaysWord));
+  todayButton.textContent = todaysWord;
   definitionNode.appendChild(definitionText);
   todayButton.appendChild(definitionNode);
   todayButton.classList.add(
@@ -2392,17 +2394,17 @@ todayButton.addEventListener("click", async () => {
 const tomorrowButton = document.getElementById("tomorrows-btn");
 
 tomorrowButton.addEventListener("click", async () => {
-  tomorrowButton.textContent = tomorrowsWord;
   let definitionNode = document.createElement("p");
   let definitionText = document.createTextNode(
     await getDefinition(tomorrowsWord)
   );
-  definitionNode.appendChild(definitionText);
-  tomorrowButton.appendChild(definitionNode);
+  tomorrowButton.textContent = tomorrowsWord;
   tomorrowButton.classList.add(
     "answer-text",
     "animate__animated",
     "animate__wobble"
   );
+  definitionNode.appendChild(definitionText);
+  tomorrowButton.appendChild(definitionNode);
   definitionNode.classList.add("definition-text");
 });
