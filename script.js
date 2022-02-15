@@ -242,11 +242,9 @@ var wordList = [
   "ultra",
   "robin",
   "cynic",
-  "agora",
   "aroma",
   "caulk",
   "shake",
-  "pupal",
   "dodge",
   "swill",
   "tacit",
@@ -275,7 +273,6 @@ var wordList = [
   "tease",
   "cater",
   "movie",
-  "lynch",
   "saute",
   "allow",
   "renew",
@@ -296,7 +293,6 @@ var wordList = [
   "fewer",
   "shawl",
   "natal",
-  "fibre",
   "comma",
   "foray",
   "scare",
@@ -306,7 +302,6 @@ var wordList = [
   "royal",
   "chunk",
   "mince",
-  "slave",
   "shame",
   "cheek",
   "ample",
@@ -397,7 +392,6 @@ var wordList = [
   "hydro",
   "flack",
   "agape",
-  "wench",
   "voice",
   "stead",
   "stalk",
@@ -2317,7 +2311,6 @@ var wordList = [
   "rural",
   "shave",
 ];
-
 const startDate = new Date(2021, 5, 19, 0, 0, 0, 0);
 const todayDate = new Date().setHours(0, 0, 0, 0);
 const options = {
@@ -2327,7 +2320,7 @@ const options = {
   day: "numeric",
 };
 
-// get number by comparing date with start date
+// get word number by comparing date with start date
 function getWordNumber(startDate, date = todayDate) {
   const differenceDate = startDate - date;
   const drawNumber = Math.abs(Math.round(differenceDate / 864e5));
@@ -2336,7 +2329,7 @@ function getWordNumber(startDate, date = todayDate) {
 
 const drawNumber = getWordNumber(startDate);
 
-// get word with list and draw number
+// get word from array using list and draw number
 function getWord(list, drawNumber) {
   let todaysWord = list[drawNumber];
   return todaysWord;
@@ -2360,9 +2353,7 @@ async function getDefinition(whichWord) {
   }
 }
 
-getDefinition();
-
-// Buttons listeners with function to show answers and add classes
+// Event listeners with function to show answers and add classes
 const yesterdayButton = document.getElementById("yesterdays-btn");
 
 yesterdayButton.addEventListener("click", async () => {
@@ -2415,6 +2406,8 @@ tomorrowButton.addEventListener("click", async () => {
   definitionNode.classList.add("definition-text");
 });
 
+// function to display date in the answer box
+
 function displayDate() {
   const date = new Date();
   document.getElementById("todays-date").textContent = date.toLocaleDateString(
@@ -2424,8 +2417,9 @@ function displayDate() {
   date.setDate(date.getDate() - 1);
   document.getElementById("yesterdays-date").textContent =
     date.toLocaleDateString("en-US", options);
- date.setDate(date.getDate() + 2);
+  date.setDate(date.getDate() + 2);
   document.getElementById("tommorows-date").textContent =
     date.toLocaleDateString("en-US", options);
 }
+
 displayDate();
