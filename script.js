@@ -2339,11 +2339,27 @@ const todaysWord = getWord(wordList, drawNumber);
 const yesterdaysWord = getWord(wordList, drawNumber - 1);
 const tomorrowsWord = getWord(wordList, drawNumber + 1);
 
+// custom timeout for fetch request
+async function fetchWithTimeout(resource, options = {}) {
+  const { timeout = 8000 } = options;
+  
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeout);
+  const response = await fetch(resource, {
+    ...options,
+    signal: controller.signal  
+  });
+  clearTimeout(id);
+  return response;
+}
+
 // Free Dictionary API
 async function getDefinition(whichWord) {
   try {
-    let response = await fetch(
-      `https://api.dictionaryapi.dev/api/v2/entries/en/${whichWord}`
+    let response = await fetchWithTimeout(
+      `https://api.dictionaryapi.dev/api/v2/entries/en/${whichWord}`, {
+        timeout: 6000
+      }
     );
     let data = await response.json();
     let definition = data[0].meanings[0].definitions[0].definition;
