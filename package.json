@@ -2,7 +2,8 @@
   "name": "-y",
   "version": "1.0.0",
   "description": "wordle words",
-  "main": "script.js",
+  "main": "/scripts/main.mjs",  
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,4 +17,6 @@
     "url": "https://github.com/enoripl/tomorrows-wordle/issues"
   },
   "homepage": "https://github.com/enoripl/tomorrows-wordle#readme"
+    
 }
+
