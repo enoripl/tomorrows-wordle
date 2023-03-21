@@ -14,6 +14,7 @@ const options = {
 function getWordNumber(startDate, date = todayDate) {
   const differenceDate = startDate - date;
   const drawNumber = Math.abs(Math.round(differenceDate / 864e5));
+  console.log(drawNumber)
   return drawNumber;
 }
 
